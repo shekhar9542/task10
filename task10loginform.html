@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="avatar">
+        <img src="pic 8.png" alt="Avatar">
+    </div>
+    <div class="login-container">
+        <div class="login-box">
+           
+            <h2>Login</h2>
+            <p>Access to our dashboard</p>
+            <form id="loginForm">
+                <div class="textbox">
+                    <input type="email" id="email" placeholder="Enter email" required>
+                </div>
+                <div class="textbox" id="passwordGroup" style="display: none;">
+                    <input type="password" id="password" placeholder="Enter Password" required>
+                </div>
+                <a href="#" class="forgot-password">Forgot password?</a>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="register-link">Don't have an account yet? <a href="#">Register</a></p>
+        </div>
+    </div>
+    <script>
+ document.getElementById('email').addEventListener('input', function() {
+    const emailInput = this.value;
+    const passwordGroup = document.getElementById('passwordGroup');
+    
+    
+    if (emailInput.includes('@') && emailInput.includes('.')) {
+        passwordGroup.style.display = 'block';
+    } else {
+        passwordGroup.style.display = 'none';
+    }
+});
+
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    console.log('Email:', email);
+    console.log('Password:', password);
+    
+    alert('Form submitted successfully!');
+    return true;
+
+});
+    </script>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: black;
+    text-align: center;
+    width: 300px;
+    position: relative;
+}
+
+.avatar {
+    position: absolute;
+    top: 00px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    
+}
+
+.avatar img {
+    width: 300px;
+    height: 50px;
+    border-radius: 50%;
+}
+ h2 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    display: block;
+    margin-bottom: 20px;
+    color: #999;
+    text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: orangered;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-link {
+    margin-top: 20px;
+    color: #999;
+}
+
+.register-link a {
+    color: #ff4b2b;
+    text-decoration: none;
+}
+
+
+    </style>
+</body>
+</html>
